@@ -171,8 +171,8 @@
 						<a
 						href="javascript:void(0)"
 						id="showCartItems"
-							data-url="{{route('cartItems.show', Auth::id())}}"
-							
+							{{-- data-url="{{route('cartItems.show', Auth::id())}}" --}}
+						>	
 						<i class="zmdi zmdi-shopping-cart"></i>
 						</a>
 						</div>
