@@ -39,6 +39,9 @@ class CartController extends Controller
         }
     }
     public function showCartItems($id){
-
+        // $cartData = Cart::where(['user_id' => $id])->get();
+        $cartData = Cart::with('User')->where(['user_id'=>$id])->get();
+        // dd($cartData);
+        return \response()->json($cartData);
     }
 }

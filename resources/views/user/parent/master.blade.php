@@ -167,11 +167,11 @@
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<div  class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+						<div id="cartItemCount" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="">
 						<a
 						href="javascript:void(0)"
 						id="showCartItems"
-							{{-- data-url="{{route('cartItems.show', Auth::id())}}" --}}
+							data-url="{{route('cartItems.show', Auth::id())}}"
 						>	
 						<i class="zmdi zmdi-shopping-cart"></i>
 						</a>
@@ -325,43 +325,15 @@
 								White Shirt Pleat
 							</a>
 
-							<span class="header-cart-item-info">
+							<span id="cartItemID" class="header-cart-item-info">
 								1 x $19.00
 							</span>
+                                                        <span id="cartItemID"></span>
+                                                        <span id="cartItemUser"></span>
+                                                        <span id="cartItemProduct"></span>
 						</div>
 					</li>
 
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="img/item-cart-02.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Converse All Star
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $39.00
-							</span>
-						</div>
-					</li>
-
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="img/item-cart-03.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Nixon Porter Leather
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $17.00
-							</span>
-						</div>
-					</li>
 				</ul>
 				
 				<div class="w-full">

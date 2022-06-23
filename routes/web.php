@@ -70,7 +70,7 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/products/{id}', [HomeController::class, 'show1'])->name('products.show');
-// Route::get('/showCartItems/{id}', [HomeController::class, 'showCartItems'])->name('cartItems.show');
+Route::get('/showCartItems/{id}', [CartController::class, 'showCartItems'])->name('cartItems.show');
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/shop', [HomeController::class, 'shop']);
 Route::get('/blog1', [HomeController::class, 'blog1']);
