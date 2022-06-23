@@ -57,6 +57,21 @@ class HomeController extends Controller
       
         return view('user.blogs.blog_portfolio');
     }
+    public function blogPage()
+    {
+      
+        return view('user.panel.blog');
+    }
+    public function contactPage()
+    {
+      
+        return view('user.panel.contactUs');
+    }
+    public function aboutPage()
+    {
+      
+        return view('user.panel.aboutUS');
+    }
     public function show1($id)
     {
         $product= Product::find($id);

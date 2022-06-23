@@ -109,15 +109,15 @@
 							</li>
 
 							<li>
-								<a href="{{url('blog')}}">Blog</a>
+								<a href="{{url('blogPage')}}">Blog</a>
 							</li>
 
 							<li>
-								<a href="{{url('about')}}">About</a>
+								<a href="{{url('aboutPage')}}">About</a>
 							</li>
 
 							<li>
-								<a href="{{url('contact')}}">Contact</a>
+								<a href="{{url('contactPage')}}">Contact</a>
 							</li>
 							
                         <!-- Authentication Links -->
@@ -168,13 +168,23 @@
 						</div>
 
 						<div id="cartItemCount" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="">
-						<a
+						@if(Auth::check())
+                                                
+                                                <a
 						href="javascript:void(0)"
 						id="showCartItems"
 							data-url="{{route('cartItems.show', Auth::id())}}"
 						>	
 						<i class="zmdi zmdi-shopping-cart"></i>
 						</a>
+                                             @else 
+                                                <a
+						href="/login"
+						>	
+						<i class="zmdi zmdi-shopping-cart"></i>
+						</a>
+                                          @endif
+                                    
 						</div>
 
 						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
