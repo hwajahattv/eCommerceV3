@@ -167,7 +167,7 @@
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<div id="cartItemCount" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="">
+						<div id="cartItemCount" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="{{$cartItemsCount}}">
 						@if(Auth::check())
                                                 
                                                 <a
@@ -324,23 +324,21 @@
 			</div>
 			
 			<div class="header-cart-content flex-w js-pscroll">
-				<ul class="header-cart-wrapitem w-full">
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="img/item-cart-01.jpg" alt="IMG">
+				<ul class="header-cart-wrapitem w-full" id="cart_items">
+					<li class="header-cart-item flex-w flex-t m-b-12 hidden" style="display: none" id="sample_cart_product">
+						<div class="header-cart-item-img " >
+							<img class="productImage" src="img/item-cart-01.jpg" alt="IMG">
 						</div>
 
 						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+							<a href="#" class="cart_product_title header-cart-item-name m-b-18 hov-cl1 trans-04">
 								White Shirt Pleat
 							</a>
 
 							<span id="cartItemID" class="header-cart-item-info">
 								1 x $19.00
 							</span>
-                                                        <span id="cartItemID"></span>
-                                                        <span id="cartItemUser"></span>
-                                                        <span id="cartItemProduct"></span>
+                                                        
 						</div>
 					</li>
 

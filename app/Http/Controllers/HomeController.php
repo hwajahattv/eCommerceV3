@@ -31,7 +31,9 @@ class HomeController extends Controller
     {
         $cat_data= Category::all();
         $pro_data=Product::all();
-        return view('user.panel.home',['catdata'=>$cat_data, 'prodata'=>$pro_data]);
+        $cartItemsCount = Cart::where('user_id',Auth::id())->count();
+        // dd($cartItemsCount);
+        return view('user.panel.home',['catdata'=>$cat_data, 'prodata'=>$pro_data, 'cartItemsCount'=>$cartItemsCount]);
     }
 
     public function shop()
@@ -39,8 +41,9 @@ class HomeController extends Controller
         $cat_data= Category::with('parent')->get();
         // dd($cat_data);
         $pro_data=Product::all();
-        // dd($pro_data);
-        return view('user.panel.shop',['catdata'=>$cat_data, 'prodata'=>$pro_data]);
+        $cartItemsCount = Cart::where('user_id',Auth::id())->count();
+        // dd($cartItemsCount);
+        return view('user.panel.shop',['catdata'=>$cat_data, 'prodata'=>$pro_data, 'cartItemsCount'=>$cartItemsCount]);
     }
     public function blog1()
     {

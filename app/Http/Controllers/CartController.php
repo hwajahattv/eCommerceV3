@@ -16,31 +16,32 @@ class CartController extends Controller
         $productID=$data["productId"];
         if(Auth::check())
         {
-            $productCheck=Product::where(['id'=>$productID])->first();
-            if($productCheck){
-                if(Cart::where(['product_id'=>$productID])->where('user_id',Auth::id())->exists()){
-                    return response()->json(['status'=> $productCheck->title.' Already added to cart.']);
+            $cart=Cart::where(['user_id'=>Auth::id()])->first();
+            
+                if($cart){
+                        $cart->Products()->attach([$productID]);
+                        return response()->json(['status'=> ' 1 added to cart successfully']);
+                        // return response()->json(['status'=> $productCheck->title.' Already added to cart.']);?
                 }
                 else
                 {
-                    $cartItem = new Cart();
-                    $cartItem->product_id = $productID;
-                    $cartItem->user_id = Auth::id();
-                    $cartItem->save();
-                    return response()->json(['status'=> $productCheck->title.' added to cart successfully']);
+                        $cartItem = new Cart();
+                //     $cartItem->product_id = $productID;
+                        $cartItem->user_id = Auth::id();
+                        $cartItem->save();
+                        $cartItem->Products()->attach([$productID]);
+                        return response()->json(['status'=> ' 2 added to cart successfully']);
                 }
-            }else{
-                return response()->json(['status'=> ' Problem identified']);
-
-            }
+            
         }
         else{
             return response()->json(['status'=>'Login to continue']);
         }
     }
     public function showCartItems($id){
-        // $cartData = Cart::where(['user_id' => $id])->get();
-        $cartData = Cart::with('User')->where(['user_id'=>$id])->get();
+        \DB::enableQueryLog();
+        $cartData = Cart::with(['User', 'Products'])->where(['user_id'=>$id])->first();
+        // dd(\DB::getQueryLog());
         // dd($cartData);
         return \response()->json($cartData);
     }

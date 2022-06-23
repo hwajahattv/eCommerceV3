@@ -322,15 +322,34 @@
             $.ajax(userURL, {
                 success: function (data, status) {
                     console.log(data);
-                    console.count(data.id);
+                    //     console.count(data);
                     $("#cartItemID").text(data.id);
                     $("#cartItemUser").text(data.user_id);
-                    $("#cartitemProduct").text(data.product_id);
+                    var products = data.products;
+                    console.log(products);
+                    for (i = 0; i < products.length; i++) {
+                        var sampleProduct = $("#sample_cart_product");
+                        var product = sampleProduct.clone();
+                        product.attr("id", "cart_product_" + products[i].id);
+                        product
+                            .find(".cart_product_title")
+                            .text(products[i].title);
+                        product
+                            .find(".productImage")
+                            .attr(
+                                "src",
+                                "img/uploads/product/" +
+                                    products[i].product_image
+                            );
+                        $("#cart_items").append(product);
+                        product.show();
+                    }
+                    //     $("#cartitemProduct").text(data.product_id);
                     //     $("#productImage").attr(
                     //         "src",
                     //         "img/uploads/product/" + data.product_image
                     //     );
-                    //     $("#cartItemCount").attr("data-notify", data.count());
+                    //     $("#cartItemCount").attr("data-notify", data.length);
                     //     $(".js-sidebar").addClass("show-sidebar");
 
                     $(".js-panel-cart").addClass("show-header-cart");
