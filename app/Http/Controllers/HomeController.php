@@ -31,18 +31,39 @@ class HomeController extends Controller
     {
         $cat_data= Category::all();
         $pro_data=Product::all();
-        $cartItemsCount = Cart::where('user_id',Auth::id())->count();
-        // dd($cartItemsCount);
+        if (Auth::check()) {
+                # code...
+                $availableCart=Cart::where(['user_id'=>Auth::id()])->first();
+                // dd($cart);
+                if(!empty($availableCart)) {
+                        $cartItemsCount=$availableCart->Products()->count();
+                } else {
+                        $cartItemsCount=0;
+                }
+        }
+        else {
+                $cartItemsCount=0;
+        }
         return view('user.panel.home',['catdata'=>$cat_data, 'prodata'=>$pro_data, 'cartItemsCount'=>$cartItemsCount]);
     }
 
     public function shop()
     {
         $cat_data= Category::with('parent')->get();
-        // dd($cat_data);
         $pro_data=Product::all();
-        $cartItemsCount = Cart::where('user_id',Auth::id())->count();
-        // dd($cartItemsCount);
+        if (Auth::check()) {
+                # code...
+                $availableCart=Cart::where(['user_id'=>Auth::id()])->first();
+                // dd($cart);
+                if(!empty($availableCart)) {
+                $cartItemsCount=$availableCart->Products()->count();
+                } else {
+                        $cartItemsCount=0;
+                }
+        }
+        else {
+        $cartItemsCount=0;
+        }
         return view('user.panel.shop',['catdata'=>$cat_data, 'prodata'=>$pro_data, 'cartItemsCount'=>$cartItemsCount]);
     }
     public function blog1()
@@ -62,18 +83,63 @@ class HomeController extends Controller
     }
     public function blogPage()
     {
+        $cat_data= Category::all();
+        $pro_data=Product::all();
+        if (Auth::check()) {
+        # code...
+                $availableCart=Cart::where(['user_id'=>Auth::id()])->first();
+                // dd($cart);
+                if(!empty($availableCart)) {
+                        $cartItemsCount=$availableCart->Products()->count();
+                } else {
+                $cartItemsCount=0;
+                }
+        }
+        else {
+        $cartItemsCount=0;
+        }
       
-        return view('user.panel.blog');
+        return view('user.panel.blog',['cartItemsCount'=>$cartItemsCount]);
     }
     public function contactPage()
     {
-      
-        return view('user.panel.contactUs');
+       $cat_data= Category::all();
+       $pro_data=Product::all();
+       if (Auth::check()) {
+       # code...
+       $availableCart=Cart::where(['user_id'=>Auth::id()])->first();
+       // dd($cart);
+       if(!empty($availableCart)) {
+       $cartItemsCount=$availableCart->Products()->count();
+       } else {
+       $cartItemsCount=0;
+       }
+       }
+       else {
+       $cartItemsCount=0;
+       }
+
+       return view('user.panel.contactUs',['cartItemsCount'=>$cartItemsCount]);
     }
     public function aboutPage()
     {
-      
-        return view('user.panel.aboutUS');
+         $cat_data= Category::all();
+         $pro_data=Product::all();
+         if (Auth::check()) {
+         # code...
+         $availableCart=Cart::where(['user_id'=>Auth::id()])->first();
+         // dd($cart);
+         if(!empty($availableCart)) {
+         $cartItemsCount=$availableCart->Products()->count();
+         } else {
+         $cartItemsCount=0;
+         }
+         }
+         else {
+         $cartItemsCount=0;
+         }
+
+         return view('user.panel.aboutUS',['cartItemsCount'=>$cartItemsCount]);
     }
     public function show1($id)
     {

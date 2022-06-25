@@ -20,7 +20,7 @@
               <td>{{ $abc->description }}</td>
               <!-- <td>{{ $abc->parent_id }}</td> -->
               @foreach($alldata as $category)
-              @if($abc->parent_id==1)
+              @if($abc->parent_id=="")
               <td>
                 Parent Category
               </td>

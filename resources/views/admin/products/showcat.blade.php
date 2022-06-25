@@ -10,7 +10,7 @@
             <label for="">Select Category:</label>
             <select name="sel_category">
                 @foreach ( $category_data as $catdata)
-                    @if($catdata->parent_id!=1)
+                    @if($catdata->parent_id!="")
                         @foreach($category_data as $parentCategory)
                             @if($parentCategory->id==$catdata->parent_id)
                                 <option value="{{$catdata->id}}">{{$catdata->name}} ({{$parentCategory->name}})</option>

@@ -13,31 +13,18 @@
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
 						All Products
 					</button>
-                    <!-- @foreach ($catdata as $cat )
-                        
-                    
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
-						{{$cat->name}}
-					</button>
-
-					@endforeach -->
-				</div>
-				@foreach ( $catdata as $cat)
-                    @if($cat->parent_id!=1)
-                        @foreach($catdata as $parentCategory)
-                            @if($parentCategory->id==$cat->parent_id)
-							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
-						{{$cat->name}} ({{$parentCategory->name}})
-					</button>
-                            @endif
-                        @endforeach
-                    @endif
-                @endforeach
-
-
-
-
-
+                                        @foreach ( $catdata as $cat)
+                                                @if($cat->parent_id!="")
+                                                        @foreach($catdata as $parentCategory)
+                                                                @if($parentCategory->id==$cat->parent_id)
+                                                                        <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
+                                                                                {{$cat->name}} ({{$parentCategory->name}})
+                                                                        </button>
+                                                                @endif
+                                                        @endforeach
+                                                @endif
+                                        @endforeach
+                                </div>
 				<div class="flex-w flex-c-m m-tb-10">
 					<div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
 						<i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>

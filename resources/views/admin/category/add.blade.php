@@ -16,11 +16,11 @@
     </div>
     <div class="form-group col-md-6">
        <div class="row">
-        <label for="exampleFormControlSelect1">Select parent category</label>
+        <label for="exampleFormControlSelect1">Select parent category (Leave blank for master category)</label>
           <select class="form-control col-md-2" id="selectParentCategory" name="parentCategory">
-            <option default selected value="1">Parent</option>
+            <option default selected value="">Parent</option>
             @foreach ( $category_data as $catdata)
-                  @if($catdata->parent_id==1)
+                  @if($catdata->parent_id=="")
                       <option value="{{$catdata->id}}">{{$catdata->name}}</option>
                       @endif
             @endforeach

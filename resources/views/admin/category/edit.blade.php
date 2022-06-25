@@ -21,7 +21,7 @@
              <input type="file" name="categoryThumbnail" class="form-control">
              <input type="hidden" name="current_image" value="{{$data_send->image}}">
              @if (!empty ($data_send->image))
-             <img style="width:110px; height:110px;" src="{{ asset('/uploads/category/'.$data_send->image) }}" />
+             <img style="width:110px; height:110px;" src="{{ asset('img/uploads/category/'.$data_send->image) }}" />
    
              @endif
          </div>
@@ -29,11 +29,11 @@
     <select class="form-control col-md-2" id="selectParentCategory" name="parentCategory">
       <option default value="1">Parent</option>
       @foreach ( $listForParent as $selectParentCategory)
-        @if($selectParentCategory->parent_id==1)
-        @if($selectParentCategory->id==$data_send->parent_id)
-                <option selected value="{{$selectParentCategory->id}}">{{$selectParentCategory->name}}</option>
+        @if($selectParentCategory->parent_id=="")
+                @if($selectParentCategory->id==$data_send->parent_id)
+                        <option selected value="{{$selectParentCategory->id}}">{{$selectParentCategory->name}}</option>
                 @else
-                <option value="{{$selectParentCategory->id}}">{{$selectParentCategory->name}}</option>
+                        <option value="{{$selectParentCategory->id}}">{{$selectParentCategory->name}}</option>
                 @endif
         @endif
       @endforeach

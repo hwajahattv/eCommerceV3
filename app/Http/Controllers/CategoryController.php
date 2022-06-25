@@ -90,7 +90,9 @@ class CategoryController extends Controller
 
 
        public function editcategory($id_receive){
-        $alldata = Category::where(['id'=>$id_receive])->first();
+
+        $alldata = Category::with('parent')->where(['id'=>$id_receive])->first();
+        // $alldata = Category::where(['id'=>$id_receive])->first();
         $category_lists=Category::all('id','name','parent_id');
          // dd($alldata);
         return view ('admin.category.edit',['data_send'=>$alldata,'listForParent'=>$category_lists]);

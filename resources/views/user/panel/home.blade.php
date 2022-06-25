@@ -88,7 +88,7 @@
 	<div class="sec-banner bg0">
 		<div class="flex-w flex-c-m">
 			@foreach ($catdata as $cat)
-			@if($cat->parent_id!=1)
+			@if($cat->parent_id!="")
 			<div class="size-202 m-lr-auto respon4">
 				<!-- Block1 -->
 				<div class="block1 wrap-pic-w">
@@ -101,11 +101,11 @@
 							</span>
 
 							<span class="block1-info stext-102 trans-04">
-							@foreach($catdata as $parentCategory)
-                            @if($parentCategory->id==$cat->parent_id)
-                                {{$parentCategory->name}}
-                            @endif
-                        @endforeach
+                                                                @foreach($catdata as $parentCategory)
+                                                                        @if($parentCategory->id==$cat->parent_id)
+                                                                        {{$parentCategory->name}}
+                                                                        @endif
+                                                                @endforeach
 							</span>
 						</div>
 
