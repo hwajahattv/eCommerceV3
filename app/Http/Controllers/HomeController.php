@@ -101,6 +101,26 @@ class HomeController extends Controller
       
         return view('user.panel.blog',['cartItemsCount'=>$cartItemsCount]);
     }
+    public function cartPage()
+    {
+        $cat_data= Category::all();
+        $pro_data=Product::all();
+        if (Auth::check()) {
+        # code...
+                $availableCart=Cart::where(['user_id'=>Auth::id()])->first();
+                // dd($cart);
+                if(!empty($availableCart)) {
+                        $cartItemsCount=$availableCart->Products()->count();
+                } else {
+                $cartItemsCount=0;
+                }
+        }
+        else {
+        $cartItemsCount=0;
+        }
+      
+        return view('user.panel.shoppingCart',['cartItemsCount'=>$cartItemsCount]);
+    }
     public function contactPage()
     {
        $cat_data= Category::all();

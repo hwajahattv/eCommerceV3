@@ -104,8 +104,8 @@
 								<a href="{{url('shop')}}">Shop</a>
 							</li>
 
-							<li class="label1" data-label1="hot">
-								<a href="{{url('cart')}}">Features</a>
+							<li class="label1" data-label1="{{$cartItemsCount}}">
+								<a href="{{url('/cartPage')}}">Cart</a>
 							</li>
 
 							<li>

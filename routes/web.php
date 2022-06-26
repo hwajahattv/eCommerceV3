@@ -73,6 +73,8 @@ Route::get('/products/{id}', [HomeController::class, 'show1'])->name('products.s
 Route::get('/showCartItems/{id}', [CartController::class, 'showCartItems'])->name('cartItems.show');
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/blogPage', [HomeController::class, 'blogPage']);
+Route::get('/cartPage/{id}', [HomeController::class, 'cartPage']);
+Route::get('/cartPage', [HomeController::class, 'cartPage']);
 Route::get('/contactPage', [HomeController::class, 'contactPage']);
 Route::get('/aboutPage', [HomeController::class, 'aboutPage']);
 Route::get('/shop', [HomeController::class, 'shop']);
