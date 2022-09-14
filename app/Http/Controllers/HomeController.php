@@ -103,7 +103,7 @@ class HomeController extends Controller
     }
     public function cartPage()
     {
-        $cat_data= Category::all();
+        // $cat_data= Category::all();
         $pro_data=Product::all();
         if (Auth::check()) {
         # code...
@@ -118,8 +118,10 @@ class HomeController extends Controller
         else {
         $cartItemsCount=0;
         }
+        $cartItemsOnPage=$availableCart->Products()->get();
+        // dd($cartItemsOnPage);
       
-        return view('user.panel.shoppingCart',['cartItemsCount'=>$cartItemsCount]);
+        return view('user.panel.shoppingCart',['cartItemsCount'=>$cartItemsCount,'cartItems'=>$cartItemsOnPage]);
     }
     public function contactPage()
     {
@@ -158,20 +160,39 @@ class HomeController extends Controller
          else {
          $cartItemsCount=0;
          }
-
+         
          return view('user.panel.aboutUS',['cartItemsCount'=>$cartItemsCount]);
-    }
-    public function show1($id)
-    {
-        $product= Product::find($id);
-        
-        return \response()->json($product);
-    }
-    public function showCartItems($id)
-    {
-        $cart= Cart::where('user_id',$id)->get();
-        
-        return \response()->json($cart);
+        }
+        public function show1($id)
+        {
+                $product= Product::find($id);
+                
+                return \response()->json($product);
+        }
+        public function showCartItems($id)
+        {
+                $cart= Cart::where('user_id',$id)->get();
+                
+                return \response()->json($cart);
+        }
+        public function productsListOfCategory($id)
+        {
+                if (Auth::check()) {
+                $availableCart=Cart::where(['user_id'=>Auth::id()])->first();
+                // dd($cart);
+                if(!empty($availableCart)) {
+                        $cartItemsCount=$availableCart->Products()->count();
+                } else {
+                        $cartItemsCount=0;
+                }
+                }
+                else {
+                        $cartItemsCount=0;
+                }
+                $listOfProducts= Product::where('category_id',$id)->get();
+                $category_lists=Category::all('id','name','parent_id');
+                return
+                view('user.panel.categoryPage',['cartItemsCount'=>$cartItemsCount,'listOfProducts'=>$listOfProducts,'category_data'=>$category_lists]);
     }
 
 

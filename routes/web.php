@@ -29,6 +29,8 @@ Route::group(['auth'=>'middleware'],function(){
     Route::resource('categories', 'CategoryController');
     Route::get('/admin', [AdminController::class,'index']);
     Route::get('/logout', [AdminController::class,'logout']);
+    Route::get('/404page', [AdminController::class,'page404']);
+    Route::get('/table', [AdminController::class,'table']);
     Route::get('/login', [AdminController::class,'login']);
     Route::get('/addCategory', [App\Http\Controllers\CategoryController::class,'index']);
     Route::post('/addCategory', [CategoryController::class,'store']);
@@ -81,6 +83,7 @@ Route::get('/shop', [HomeController::class, 'shop']);
 Route::get('/blog1', [HomeController::class, 'blog1']);
 Route::get('/blog2', [HomeController::class, 'blog2']);
 Route::get('/blog3', [HomeController::class, 'blog3']);
+Route::get('/productsListOfCategory/{id}', [HomeController::class, 'productsListOfCategory']);
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

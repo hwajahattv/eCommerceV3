@@ -88,7 +88,7 @@
 	</div>
 
 
-	<!-- breadcrumb -->
+	{{-- <!-- breadcrumb -->
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
 			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
@@ -100,7 +100,7 @@
 				Shoping Cart
 			</span>
 		</div>
-	</div>
+	</div> --}}
 		
 
 	<!-- Shoping Cart -->
@@ -118,54 +118,32 @@
 									<th class="column-4">Quantity</th>
 									<th class="column-5">Total</th>
 								</tr>
-
+                                                                @foreach ($cartItems as $loopItems)
+                                                                        
 								<tr class="table_row">
-									<td class="column-1">
-										<div class="how-itemcart1">
-											<img src="images/item-cart-04.jpg" alt="IMG">
+                                                                        <td class="column-1">
+                                                                                <div class="how-itemcart1">
+                                                                                        <img src="{{asset('img/uploads/product')}}/{{$loopItems->product_image}}" alt="IMG">
 										</div>
 									</td>
-									<td class="column-2">Fresh Strawberries</td>
-									<td class="column-3">$ 36.00</td>
+									<td class="column-2"> {{$loopItems->title}}</td>
+									<td class="column-3">Rs.  {{$loopItems->price}}</td>
 									<td class="column-4">
-										<div class="wrap-num-product flex-w m-l-auto m-r-0">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-minus"></i>
+                                                                                <div class="wrap-num-product flex-w m-l-auto m-r-0">
+                                                                                        <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                                                                                                <i class="fs-16 zmdi zmdi-minus"></i>
 											</div>
-
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="1">
-
+                                                                                        
+											<input class="mtext-104 cl3 txt-center num-product" type="number" id="nm".{{$loop->iteration}} placeholder="name="num-product1" value="1">
+                                                                                        
 											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-plus"></i>
+                                                                                                <i class="fs-16 zmdi zmdi-plus"></i>
 											</div>
 										</div>
 									</td>
 									<td class="column-5">$ 36.00</td>
 								</tr>
-
-								<tr class="table_row">
-									<td class="column-1">
-										<div class="how-itemcart1">
-											<img src="images/item-cart-05.jpg" alt="IMG">
-										</div>
-									</td>
-									<td class="column-2">Lightweight Jacket</td>
-									<td class="column-3">$ 16.00</td>
-									<td class="column-4">
-										<div class="wrap-num-product flex-w m-l-auto m-r-0">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
-
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product2" value="1">
-
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-plus"></i>
-											</div>
-										</div>
-									</td>
-									<td class="column-5">$ 16.00</td>
-								</tr>
+                                                                @endforeach
 							</table>
 						</div>
 

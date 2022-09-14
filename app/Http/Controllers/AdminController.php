@@ -28,4 +28,14 @@ class AdminController extends Controller
         Auth::logout();
         return redirect('login');
     }
+    public function page404()
+    {
+ 
+        return view('admin.404');
+    }
+    public function table()
+    {
+ 
+        return view('admin.tablesSample');
+    }
 }
