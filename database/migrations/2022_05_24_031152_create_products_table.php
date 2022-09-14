@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('SKU');
             $table->integer('price');
             $table->enum('size',['XS','S','M','L','XL']);
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->binary('enabled')->default(0);
             $table->integer('stock');
             $table->string('product_image')->nullable();
