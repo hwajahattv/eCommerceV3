@@ -249,7 +249,8 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
-                                <img src="{{ asset('img/uploads/product/' . $product->product_image) }}" alt="IMG-PRODUCT">
+                                <img src="{{ asset('img/uploads/product/' . $product->product_image) }}"
+                                    alt="IMG-PRODUCT">
 
                                 <a href="javascript:void(0)" id="show-modal"
                                     data-url="{{ route('products.show', $product->id) }}"
@@ -282,13 +283,10 @@
                         </div>
                     </div>
                 @endforeach
-
-
             </div>
         </div>
     </div>
     </div>
-
     <!-- Load more -->
     <div class="flex-c-m flex-w w-full p-t-45">
         <a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
@@ -297,11 +295,9 @@
     </div>
     </div>
     </div>
-
     <!-- Modal1 -->
     <div id="js-show-modal1" class="wrap-modal1 js-modal1 p-t-60 p-b-20">
         <div class="overlay-modal1 js-hide-modal1"></div>
-
         <div class="container productData">
             <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
                 <button class="how-pos3 hov3 trans-04 js-hide-modal1">
@@ -313,7 +309,6 @@
                             <div class="wrap-slick3 flex-sb flex-w">
                                 <div class="wrap-slick3-dots"></div>
                                 <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
-
                                 <div class="slick3 gallery-lb">
                                     <div class="item-slick3" data-thumb="img/product-detail-01.jpg">
                                         <div class="wrap-pic-w pos-relative">
@@ -325,7 +320,6 @@
                                             </a>
                                         </div>
                                     </div>
-
                                     <div class="item-slick3" data-thumb="img/product-detail-02.jpg">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="img/product-detail-02.jpg" alt="IMG-PRODUCT">
