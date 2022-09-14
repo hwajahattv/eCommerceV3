@@ -20,12 +20,12 @@ class CreateProductsTable extends Migration
             $table->string('SKU');
             $table->integer('price');
             $table->enum('size',['XS','S','M','L','XL']);
-            $table->text('description');
+            $table->string('description');
             $table->binary('enabled')->default(0);
             $table->integer('stock');
             $table->string('product_image')->nullable();
-            $table->unsignedBigInteger('Category_id')->nullable();
-            $table->foreign('Category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
