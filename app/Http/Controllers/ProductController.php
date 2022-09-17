@@ -58,7 +58,7 @@ class ProductController extends Controller
        public function displayProductsFromCategory(Request $request){
         $data = $request->all();
         $category_lists=Category::all('id','name','parent_id');
-        $alldata = Product::with('Category')->where(['Category_id'=>$data['sel_category']])->get();
+        $alldata = Product::with('Category')->where(['category_id'=>$data['sel_category']])->get();
       // dd($alldata);
   
         return view ('admin.products.showProductsFromCategory', ['pro_list'=>$alldata, 'category_data'=>$category_lists]);
