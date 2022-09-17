@@ -166,7 +166,7 @@
                                         <!-- Block2 -->
                                         <div class="block2">
                                             <div class="block2-pic hov-img0">
-                                                <img src="img/uploads/product/{{$product->product_image) }}"
+                                                <img src="img/uploads/product/{{ $product->product_image }}"
                                                     alt="IMG-PRODUCT">
 
                                                 <a href="#"
