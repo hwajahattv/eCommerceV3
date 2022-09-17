@@ -29,7 +29,7 @@ class ProductController extends Controller
         $pro->size = $data["productSize"];
         $pro->stock = $data["productStock"];
         $pro->enabled = $data["enabled"];
-        $pro->Category_id = $data["sel_category"];
+        $pro->category_id = $data["sel_category"];
        
         //image validation
     
