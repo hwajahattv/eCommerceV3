@@ -4,7 +4,7 @@
 <head>
     <title>Title</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="js/app.js" defer></script>
+    {{-- <script src="js/app.js" defer></script> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,48 +18,48 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="{{ asset('img/icons/favicon.png') }}" />
-    <link rel="icon" type="image/png" href="img/icons/favicon.png" />
+    {{-- <link rel="icon" type="image/png" href="img/icons/favicon.png" /> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/iconic/css/material-design-iconic-font.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/linearicons-v1.0.0/icon-font.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/animate/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    {{-- <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/css-hamburgers/hamburgers.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/animsition/css/animsition.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/select2/select2.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/daterangepicker/daterangepicker.css') }}">
-    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    {{-- <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/slick/slick.css') }}">
-    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+    {{-- <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/MagnificPopup/magnific-popup.css') }}">
-    <link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
+    {{-- <link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
-    <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+    {{-- <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css"> --}}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}">
-    <link rel="stylesheet" type="text/css" href="css/util.css">
+    {{-- <link rel="stylesheet" type="text/css" href="css/util.css"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    {{-- <link rel="stylesheet" type="text/css" href="css/main.css"> --}}
     <!--===============================================================================================-->
     <!-- Required meta tags -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
