@@ -35,7 +35,7 @@
             @endforeach
 
             <td><img alt="No image added." style="width:110px; height:110px;"
-                    src="/img/uploads/category/{{ $abc->image }}" /></td>
+                    src="{{ url('/img/uploads/category/' . $abc->image) }}" /></td>
             <td><a href="{{ url('/editcategory/' . $abc->id) }}" class="btn btn-outline-info">Edit</a></td>
             <td><a href="{{ url('/deletecategory/' . $abc->id) }}" class="btn btn-outline-danger">Delete</a></td>
         </tr>
