@@ -38,7 +38,9 @@
     });
 
     $("#myBtn").on("click", function () {
-        $("html, body").animate({ scrollTop: 0 }, 300);
+        $("html, body").animate({
+            scrollTop: 0
+        }, 300);
     });
 
     /*==================================================================
@@ -128,7 +130,9 @@
     $filter.each(function () {
         $filter.on("click", "button", function () {
             var filterValue = $(this).attr("data-filter");
-            $topeContainer.isotope({ filter: filterValue });
+            $topeContainer.isotope({
+                filter: filterValue
+            });
         });
     });
 
@@ -207,8 +211,8 @@
         var numProduct = Number($(this).next().val());
         if (numProduct > 0)
             $(this)
-                .next()
-                .val(numProduct - 1);
+            .next()
+            .val(numProduct - 1);
     });
 
     $(".btn-num-product-up").on("click", function () {
@@ -286,7 +290,9 @@
         $.ajax({
             type: "post",
             url: "/addToCart",
-            data: { productId: productId },
+            data: {
+                productId: productId
+            },
             success: function (response) {
                 swal(response.status);
             },
@@ -337,7 +343,7 @@
                             .attr(
                                 "src",
                                 "img/uploads/product/" +
-                                    products[i].product_image
+                                products[i].product_image
                             );
                         $("#cart_items").append(product);
                         product.show();
