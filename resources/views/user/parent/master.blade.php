@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet">
+    {{-- <link href="css/app.css" rel="stylesheet"> --}}
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -200,7 +200,7 @@
                             class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
                             data-notify="{{ $cartItemsCount }}">
                             @if (Auth::check())
-                                <a href="javascript:void(0)" id="showCartItems"
+                                <a href="" id="showCartItems"
                                     data-url="{{ route('cartItems.show', Auth::id()) }}">
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </a>
@@ -566,8 +566,8 @@
     <!--===============================================================================================-->
     <script src="{{ asset('vendor/animsition/js/animsition.min.js') }}"></script>
     <!--===============================================================================================-->
-    <script src="{{ asset('vendor/bootstrap/js/popper.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    {{-- <script src="{{ asset('vendor/bootstrap/js/popper.js') }}"></script> --}}
+    {{-- <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script> --}}
     <!--===============================================================================================-->
     <script src="{{ asset('vendor/select2/select2.min.js') }}"></script>
     <script>

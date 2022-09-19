@@ -4,8 +4,6 @@
     <div class="container">
         <h1 class="text-center display-5">Edit Product</h1>
         <!-- @if ($errors->any())
-    <div class="alert alert-danger">
-                         <ul>
                              @foreach ($errors->all() as $error)
     <li>{{ $error }}</li>
     @endforeach
@@ -30,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label>Product Price:</label>
-                <input type="textarea" name="pprice" class="form-control" value="{{ $data_send->price }}">
+                <input type="number" name="pprice" class="form-control" value="{{ $data_send->price }}">
             </div>
             <div class="form-group">
                 <label>Product Stock:</label>
