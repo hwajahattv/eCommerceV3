@@ -213,13 +213,42 @@
             $(this)
             .next()
             .val(numProduct - 1);
+        var price = $(".price");
+        var quantity = $(".quantity");
+        var answer = $(".answer");
+        var eachItemBill, totalBill = 0;
+        for (var i = 0; i < price.length; i++) {
+            eachItemBill = Number(price[i].innerHTML) * Number(quantity[i].value);
+            answer[i].innerHTML = eachItemBill;
+
+        }
+        for (i = 0; i < answer.length; i++) {
+            totalBill += Number(answer[i].innerHTML);
+        }
+        document.getElementById('subtotal').innerHTML = totalBill;
+        document.getElementById('grandTotal').innerHTML = totalBill;
     });
 
     $(".btn-num-product-up").on("click", function () {
+
         var numProduct = Number($(this).prev().val());
         $(this)
             .prev()
             .val(numProduct + 1);
+        var price = $(".price");
+        var quantity = $(".quantity");
+        var answer = $(".answer");
+        var eachItemBill, totalBill = 0;
+        for (var i = 0; i < price.length; i++) {
+            eachItemBill = Number(price[i].innerHTML) * Number(quantity[i].value);
+            answer[i].innerHTML = eachItemBill;
+
+        }
+        for (i = 0; i < answer.length; i++) {
+            totalBill += Number(answer[i].innerHTML);
+        }
+        document.getElementById('subtotal').innerHTML = totalBill;
+        document.getElementById('grandTotal').innerHTML = totalBill;
     });
 
     /*==================================================================

@@ -39,7 +39,7 @@ class CartController extends Controller
         }
     }
     public function showCartItems($id){
-        \DB::enableQueryLog();
+        DB::enableQueryLog();
         $cartData = Cart::with(['User', 'Products'])->where(['user_id'=>$id])->first();
         // dd(\DB::getQueryLog());
         // dd($cartData);

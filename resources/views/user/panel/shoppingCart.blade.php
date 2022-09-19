@@ -140,12 +140,12 @@
                                                     value="1">
 
                                                 <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                    <i class="fs-16 zmdi zmdi-plus"></i>
+                                                    <i class="fs-16 zmdi zmdi-plus "></i>
                                                 </div>
                                             </div>
                                             {{-- <button onclick="add()">Add</button> --}}
                                         </td>
-                                        <td class="column-5 answer" id="">$ 361.00</td>
+                                        <td class="column-5 answer">$ 361.00</td>
                                     </tr>
                                 @endforeach
                             </table>
@@ -252,7 +252,7 @@
                                 <span class="mtext-110 cl2">
                                     Rs.
                                 </span>
-                                <span class="mtext-110 cl2" id="grandtotal">
+                                <span class="mtext-110 cl2" id="grandTotal">
                                     $79.65
                                 </span>
                             </div>
@@ -286,6 +286,6 @@
             subtotal += c;
         }
         document.getElementById("subtotal").innerHTML = subtotal;
-        document.getElementById("grandtotal").innerHTML = subtotal;
+        document.getElementById("grandTotal").innerHTML = subtotal;
     </script>
 @endsection
