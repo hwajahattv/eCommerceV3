@@ -211,8 +211,8 @@
         var numProduct = Number($(this).next().val());
         if (numProduct > 0)
             $(this)
-            .next()
-            .val(numProduct - 1);
+                .next()
+                .val(numProduct - 1);
         var price = $(".price");
         var quantity = $(".quantity");
         var answer = $(".answer");
@@ -329,7 +329,7 @@
     });
 
     $(document).ready(function () {
-        $("body").on("click", "#show-modal", function () {
+        $("body").on("click", ".show-modal", function () {
             var userURL = $(this).data("url");
             $.ajax(userURL, {
                 success: function (data, status) {
